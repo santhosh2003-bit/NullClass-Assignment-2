@@ -15,7 +15,7 @@ const HomePage = () => {
   const handleRequestOtp = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/users/otp/request",
+        "https://nullclass-assignment-2.onrender.com/api/users/otp/request",
         {
           method: "POST",
           headers: {
@@ -38,7 +38,7 @@ const HomePage = () => {
   const handleVerifyOtp = async (langCode, otp) => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/users/otp/verify",
+        "https://nullclass-assignment-2.onrender.com/api/users/otp/verify",
         {
           method: "POST",
           headers: {
