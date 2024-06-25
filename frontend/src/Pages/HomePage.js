@@ -105,7 +105,7 @@ const HomePage = () => {
   };
   return (
     <div
-      className="h-screen bg-cover bg-center flex flex-col justify-center items-center"
+      className="h-auto py-[5vh] bg-cover bg-center flex flex-col justify-center items-center"
       style={{
         backgroundImage: `url(${image})`,
       }}
