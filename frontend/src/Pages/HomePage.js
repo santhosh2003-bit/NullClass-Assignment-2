@@ -11,7 +11,11 @@ const HomePage = () => {
   const [image, setImage] = useState(defaultImage); // Set the default image initially
   const userData = JSON.parse(localStorage.getItem("user"));
   const token = localStorage.getItem("token");
-
+  const [blog, setBlog] = useState({
+    blogHeading: "Select A Language",
+    blogDescription:
+      "Verify Your OTP by entering your OTP and select your language",
+  });
   const handleRequestOtp = async () => {
     try {
       const response = await fetch(
@@ -70,6 +74,10 @@ const HomePage = () => {
     );
     if (selectedLanguage) {
       setImage(selectedLanguage.image);
+      setBlog({
+        blogHeading: selectedLanguage.blogHeading,
+        blogDescription: selectedLanguage.blogDescription,
+      });
     } else {
       setImage(defaultImage); // Reset to default image if no language is selected or found
     }
@@ -171,6 +179,12 @@ const HomePage = () => {
             English
           </button>
         </div>
+      </div>
+      <div className="bg-white bg-opacity-80 p-8 rounded-lg shadow-lg max-w-lg w-full mx-4 my-6 md:mx-auto text-center flex items-center justify-center gap-5 flex-col">
+        <h2 className="text-2xl text-black font-semibold">
+          {blog.blogHeading}
+        </h2>
+        <p className="text-gray text-lg">{blog.blogDescription}</p>
       </div>
     </div>
   );
